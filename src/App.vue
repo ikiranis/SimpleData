@@ -1,15 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <open-file />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+  import { ref } from 'vue'
+  import OpenFile from './components/OpenFile.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    OpenFile
+  },
+  setup() {
+    let data =  ref('hello')
+
+    return {
+      data
+    }
   }
 }
 </script>
