@@ -5,10 +5,10 @@
                 <div class="custom-file">
                     <input type="file" class="custom-file-input"
                            name="uploadFile" id="uploadFile"
-                           accept='text/*'
+                           accept='application/json'
                            @change="handleFile($event)">
                     <label class="custom-file-label"
-                           for="uploadFile">Φωτογραφία</label>
+                           for="uploadFile">Άνοιγμα αρχείου</label>
                 </div>
             </div>
         </div>
