@@ -27,7 +27,7 @@
 
 	export default {
 		setup() {
-			let data = ref(null)
+			let data = ref([])
 
 			const handleFile = (event) => {
 				const file = event.target.files[0]
