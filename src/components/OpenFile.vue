@@ -13,28 +13,23 @@
             </div>
         </div>
     </div>
-
-    <div v-for="item in data" :key="item.id">
-        <div>{{ item.id }}</div>
-        <div>{{ item.name }}</div>
-        <div>{{ item.city }}</div>
-    </div>
-
 </template>
 
 <script>
-	import { ref } from 'vue'
+	// import { ref } from 'vue'
+	// import { computed } from 'vue'
 
 	export default {
-		setup() {
-			let data = ref([])
+
+		setup(props, { emit }) {
 
 			const handleFile = (event) => {
 				const file = event.target.files[0]
 				const reader = new FileReader()
 
 				reader.addEventListener("load", () => {
-					data.value = JSON.parse(reader.result.valueOf())
+					emit('update', JSON.parse(reader.result.valueOf()))
+
 				}, false)
 
 				if (file) {
@@ -43,8 +38,7 @@
 			}
 
 			return {
-				data,
-				handleFile,
+				handleFile
 			}
 		}
 	}
