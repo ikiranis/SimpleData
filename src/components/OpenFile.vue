@@ -34,7 +34,7 @@
 				const reader = new FileReader()
 
 				reader.addEventListener("load", () => {
-					data.value = JSON.parse(reader.result)
+					data.value = JSON.parse(reader.result.valueOf())
 				}, false)
 
 				if (file) {
