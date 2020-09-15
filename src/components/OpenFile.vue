@@ -28,8 +28,7 @@
 				const reader = new FileReader()
 
 				reader.addEventListener("load", () => {
-					emit('update', JSON.parse(reader.result.valueOf()))
-
+					emit('update:data', JSON.parse(reader.result.valueOf()))
 				}, false)
 
 				if (file) {

@@ -1,5 +1,5 @@
 <template>
-    <open-file @update="getData"/>
+    <open-file v-model:data="data"/>
 
     <div v-for="item in data" :key="item.id">
         <div>{{ item.id }}</div>
@@ -22,13 +22,8 @@
 		setup() {
 			let data = ref([])
 
-			function getData(myData) {
-				data.value = myData
-			}
-
 			return {
-				data,
-                getData
+				data
 			}
 		}
 	}
