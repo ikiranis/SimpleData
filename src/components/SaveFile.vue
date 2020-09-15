@@ -14,8 +14,8 @@
 		},
 		setup(props) {
 			function saveFile() {
-				// console.log(props.data[1].city)
-				let file = new Blob([JSON.stringify(props.data)], {type: 'application/json'});
+				// console.log(props.data.toJson())
+				let file = new Blob([JSON.stringify(props.data,  null, 4)], {type: 'application/json'});
 				let link = document.createElement('a');
 				link.href = window.URL.createObjectURL(file);
 				link.download = "myData.json";
