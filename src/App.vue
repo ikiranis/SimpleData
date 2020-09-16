@@ -3,7 +3,9 @@
 
     <save-file :data="data"/>
 
-    <display-data :data="data"/>
+    <input-data class="mt-5"/>
+
+    <display-data class="mt-5" :data="data"/>
 
 
 </template>
@@ -14,13 +16,15 @@
 	import OpenFile from './components/OpenFile'
 	import SaveFile from "./components/SaveFile";
 	import DisplayData from "./components/DisplayData";
+	import InputData from "./components/InputData";
 
 	export default {
 		name: 'App',
 		components: {
 			SaveFile,
 			OpenFile,
-			DisplayData
+			DisplayData,
+            InputData
 		},
 
 		setup() {

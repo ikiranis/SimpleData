@@ -1,5 +1,5 @@
 <template>
-    <table class="table mt-5">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">id</th>
