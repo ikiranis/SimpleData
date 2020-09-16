@@ -1,5 +1,5 @@
 <template>
-    <a @click="saveFile">Download Data</a>
+    <a @click="saveFile"><span class="btn btn-success">Download Data</span></a>
 </template>
 
 <script>
