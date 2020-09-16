@@ -27,18 +27,23 @@
 </template>
 
 <script>
-	import {reactive} from 'vue'
+	import {ref} from 'vue'
 
 	export default {
-		setup() {
-			let record = reactive({
+		setup(props, { emit }) {
+			let record = ref({
 				id: null,
 				name: '',
 				city: ''
 			})
 
             const addRecord = () => {
-				console.log(record)
+				emit('submit', record.value)
+                record.value = {
+					id: null,
+					name: '',
+					city: ''
+                }
             }
 
 			return {

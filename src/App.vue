@@ -3,7 +3,7 @@
 
     <save-file :data="data"/>
 
-    <input-data class="mt-5"/>
+    <input-data class="mt-5" @submit="addRecord" />
 
     <display-data class="mt-5" :data="data"/>
 
@@ -28,10 +28,15 @@
 		},
 
 		setup() {
-			const data = ref(null)
+			let data = ref([])
+
+            const addRecord = (record) => {
+				data.value.push(record)
+            }
 
 			return {
-				data
+				data,
+                addRecord
 			}
 		}
 	}
