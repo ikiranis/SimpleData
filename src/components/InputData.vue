@@ -31,19 +31,17 @@
 
 	export default {
 		setup(props, { emit }) {
-			let record = ref({
+			const emptyRecord = {
 				id: null,
 				name: '',
 				city: ''
-			})
+            }
+
+			let record = ref({ emptyRecord })
 
             const addRecord = () => {
 				emit('submit', record.value)
-                record.value = {
-					id: null,
-					name: '',
-					city: ''
-                }
+                record.value = { emptyRecord }
             }
 
 			return {
