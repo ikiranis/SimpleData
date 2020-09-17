@@ -1,23 +1,15 @@
 <template>
     <div class="mx-auto col-lg-6 col-12">
         <div class="mb-3">
-            <div class="text-left">
-                <label for="name">Name</label>
-            </div>
-            <div>
-                <input id="name" type="text" class="form-control"
-                       v-model="record.name" maxlength="20">
-            </div>
+            <text-input fieldId="name" labelText="Name" inputLength=20
+                        :modelValue="record.name"
+                        @update:modelValue="record.name = $event" />
         </div>
 
         <div class="mb-3">
-            <div class="text-left">
-                <label for="city">City</label>
-            </div>
-            <div>
-                <input id="city" type="text" class="form-control"
-                       v-model="record.city" maxlength="20">
-            </div>
+            <text-input fieldId="city" labelText="City" inputLength=20
+                        :modelValue="record.city"
+                        @update:modelValue="record.city = $event" />
         </div>
 
         <button @click="addRecord" class="btn btn-warning mt-3 col-lg-6 col-12">Προσθήκη</button>
@@ -28,25 +20,30 @@
 
 <script>
 	import {ref} from 'vue'
+	import TextInput from '@/components/input/Text'
 
 	export default {
-		setup(props, { emit }) {
+		components: {
+			TextInput
+		},
+
+		setup(props, {emit}) {
 			const emptyRecord = {
 				id: null,
 				name: '',
 				city: ''
-            }
+			}
 
-			let record = ref({ emptyRecord })
+			let record = ref({emptyRecord})
 
-            const addRecord = () => {
+			const addRecord = () => {
 				emit('submit', record.value)
-                record.value = { emptyRecord }
-            }
+				record.value = {emptyRecord}
+			}
 
 			return {
 				record,
-                addRecord
+				addRecord,
 			}
 		}
 	}
