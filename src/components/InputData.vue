@@ -17,6 +17,7 @@
 <script>
 	import {ref} from 'vue'
 	import TextInput from '@/components/input/Text'
+	import { useFields } from '@/functions/fields'
 
 	export default {
 		components: {
@@ -24,25 +25,7 @@
 		},
 
 		setup(props, {emit}) {
-			// TODO read this from file
-			const fields = [
-				{
-					fieldId: 'name',
-					labelText: 'Name',
-					inputLength: 20
-				},
-				{
-					fieldId: 'city',
-					labelText: 'City',
-					inputLength: 20
-				},
-			]
-
-			let emptyRecord = {}
-
-			fields.forEach(item => {
-				emptyRecord[item.fieldId] = null
-			})
+            const { fields, emptyRecord } = useFields()
 
 			let record = ref({emptyRecord})
 
