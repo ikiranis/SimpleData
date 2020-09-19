@@ -4,7 +4,7 @@
             <tr>
                 <th v-for="field in fields"
                     :key="field.id"
-                    scope="col">{{ field.id }}</th>
+                    scope="col">{{ field.labelText }}</th>
             </tr>
         </thead>
         <tbody>

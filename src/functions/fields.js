@@ -2,7 +2,7 @@ import { ref } from 'vue'
 
 export const useFields = () => {
 
-	let json = require('@/fields.json')
+	let json = require('@/../fields.json')
 
 	const fields = ref(json)
 

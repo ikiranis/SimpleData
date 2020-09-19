@@ -1,0 +1,27 @@
+[
+  {
+    "id": "AMKA",
+    "labelText": "ΑΜΚΑ",
+    "inputLength": 20
+  },
+  {
+    "id": "VAT",
+    "labelText": "ΑΦΜ",
+    "inputLength": 20
+  },
+  {
+    "id": "lName",
+    "labelText": "Επώνυμο",
+    "inputLength": 20
+  },
+  {
+    "id": "fName",
+    "labelText": "Όνομα",
+    "inputLength": 20
+  },
+  {
+    "id": "fatherName",
+    "labelText": "Πατρώνυμο",
+    "inputLength": 20
+  }
+]
