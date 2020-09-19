@@ -1,0 +1,12 @@
+[
+  {
+    "id": "name",
+    "labelText": "Name",
+    "inputLength": 20
+  },
+  {
+    "id": "city",
+    "labelText": "City",
+    "inputLength": 20
+  }
+]
