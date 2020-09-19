@@ -3,14 +3,14 @@
         <thead>
             <tr>
                 <th v-for="field in fields"
-                    :key="field.fieldId"
-                    scope="col">{{ field.fieldId }}</th>
+                    :key="field.id"
+                    scope="col">{{ field.id }}</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="item in data" :key="item.id">
                 <td v-for="field in fields"
-                    :key="field.fieldId">{{ item[field.fieldId] }}</td>
+                    :key="field.id">{{ item[field.id] }}</td>
             </tr>
         </tbody>
     </table>
