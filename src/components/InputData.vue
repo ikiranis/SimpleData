@@ -1,11 +1,10 @@
 <template>
     <div class="mx-auto col-lg-6 col-12">
 
-
-        <div class="mb-3" v-for="field in fields" :key="field.fieldId">
+        <div class="mb-3" v-for="field in fields" :key="field.id">
             <text-input :fieldId="field.fieldId" :labelText="field.labelText" :inputLength="field.inputLength"
-                        :modelValue="record[field.fieldId]"
-                        @update:modelValue="record[field.fieldId] = $event" />
+                        :modelValue="record[field.id]"
+                        @update:modelValue="record[field.id] = $event" />
         </div>
 
         <button @click="addRecord" class="btn btn-warning mt-3 col-lg-6 col-12">Προσθήκη</button>

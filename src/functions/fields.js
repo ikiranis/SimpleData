@@ -5,12 +5,12 @@ export const useFields = () => {
 	// TODO read this from file
 	const fields = ref([
 		{
-			fieldId: 'name',
+			id: 'name',
 			labelText: 'Name',
 			inputLength: 20
 		},
 		{
-			fieldId: 'city',
+			id: 'city',
 			labelText: 'City',
 			inputLength: 20
 		},
@@ -19,7 +19,7 @@ export const useFields = () => {
 	let emptyRecord = ref({})
 
 	fields.value.forEach(item => {
-		emptyRecord.value[item.fieldId] = null
+		emptyRecord.value[item.id] = null
 	})
 
 	return {
