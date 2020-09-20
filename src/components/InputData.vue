@@ -2,7 +2,8 @@
     <div class="mx-auto col-lg-6 col-12">
 
         <div class="mb-3" v-for="field in fields" :key="field.id">
-            <text-input :fieldId="field.fieldId" :labelText="field.labelText" :inputLength="field.inputLength"
+            <text-input v-if="field.type === 'text'"
+                        :fieldId="field.fieldId" :labelText="field.labelText" :inputLength="field.inputLength"
                         :modelValue="record[field.id]"
                         @update:modelValue="record[field.id] = $event" />
         </div>
