@@ -7,7 +7,6 @@
 
     <display-data class="mt-5" :data="data"/>
 
-
 </template>
 
 <script>
