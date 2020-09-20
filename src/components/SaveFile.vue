@@ -1,5 +1,9 @@
 <template>
-    <a @click="saveFile"><span class="btn btn-success">Download Data</span></a>
+    <a @click="saveFile">
+        <img class="bi"
+             src="@/../node_modules/bootstrap-icons/icons/cloud-arrow-down-fill.svg"
+             title="Κατέβασμα αρχείου">
+    </a>
 </template>
 
 <script>

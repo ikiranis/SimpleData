@@ -1,5 +1,9 @@
 <template>
-    <div class="col-12 col-lg my-auto">
+    <img class="bi" src="@/../node_modules/bootstrap-icons/icons/cloud-arrow-up-fill.svg"
+         title="Ανέβασμα αρχείου"
+         @click="displayWindow" >
+
+    <div id="openFileWindow" class="col-12 col-lg my-auto fixed-top">
         <div class="row">
             <div class="form-group my-3 col-lg-6 col-12 mx-auto">
                 <div class="custom-file">
@@ -29,6 +33,8 @@
 
 				reader.addEventListener("load", () => {
 					emit('update:data', JSON.parse(reader.result))
+
+					document.querySelector('#openFileWindow').style.display = "none"
 				}, false)
 
 				if (file) {
@@ -36,10 +42,21 @@
 				}
 			}
 
+			const displayWindow = () => {
+				document.querySelector('#openFileWindow').style.display = "block"
+            }
+
 			return {
-				handleFile
+				handleFile,
+                displayWindow
 			}
 		}
 	}
 
 </script>
+
+<style scoped>
+    #openFileWindow {
+        display: none;
+    }
+</style>

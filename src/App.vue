@@ -1,21 +1,28 @@
 <template>
-    <open-file v-model:data="data"/>
+    <div class="container">
+        <div class="row mt-5">
+            <open-file v-model:data="data"/>
 
-    <save-file :data="data"/>
+            <save-file class="mx-3" :data="data"/>
 
-    <input-data class="mt-5" @submit="addRecord" />
+        </div>
 
-    <display-data class="mt-5" :data="data"/>
+
+
+        <input-data class="mt-5" @submit="addRecord" />
+
+        <display-data class="mt-5" :data="data"/>
+    </div>
 
 </template>
 
 <script>
 
 	import {ref} from 'vue'
-	import OpenFile from './components/OpenFile'
-	import SaveFile from "./components/SaveFile";
-	import DisplayData from "./components/DisplayData";
-	import InputData from "./components/InputData";
+	import OpenFile from '@/components/OpenFile'
+	import SaveFile from "@/components/SaveFile";
+	import DisplayData from "@/components/DisplayData";
+	import InputData from "@/components/InputData";
 
 	export default {
 		name: 'App',
@@ -23,7 +30,7 @@
 			SaveFile,
 			OpenFile,
 			DisplayData,
-            InputData
+            InputData,
 		},
 
 		setup() {
@@ -46,8 +53,11 @@
         font-family: Avenir, Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+    }
+
+    .bi {
+        width: 2em;
+        cursor: pointer;
     }
 </style>
