@@ -7,8 +7,6 @@
 
         </div>
 
-
-
         <input-data class="mt-5" @submit="addRecord" />
 
         <display-data class="mt-5" :data="data"/>
