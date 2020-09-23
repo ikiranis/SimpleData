@@ -1,9 +1,9 @@
 <template>
     <img class="bi" src="@/../node_modules/bootstrap-icons/icons/cloud-arrow-up-fill.svg"
          title="Ανέβασμα αρχείου"
-         @click="displayWindow" >
+         @click="open = !open" >
 
-    <div id="openFileWindow" class="col-12 col-lg my-auto fixed-top">
+    <div v-if="open" class="col-12 col-lg my-auto fixed-top">
         <div class="row">
             <div class="form-group my-3 col-lg-6 col-12 mx-auto">
                 <div class="custom-file">
@@ -20,12 +20,13 @@
 </template>
 
 <script>
-	// import { ref } from 'vue'
+	import { ref } from 'vue'
 	// import { computed } from 'vue'
 
 	export default {
 
 		setup(props, { emit }) {
+			let open = ref(false)
 
 			const handleFile = (event) => {
 				const file = event.target.files[0]
@@ -34,7 +35,7 @@
 				reader.addEventListener("load", () => {
 					emit('update:data', JSON.parse(reader.result))
 
-					document.querySelector('#openFileWindow').style.display = "none"
+					open.value = !open.value
 				}, false)
 
 				if (file) {
@@ -42,21 +43,11 @@
 				}
 			}
 
-			const displayWindow = () => {
-				document.querySelector('#openFileWindow').style.display = "block"
-            }
-
 			return {
-				handleFile,
-                displayWindow
+				open,
+				handleFile
 			}
 		}
 	}
 
 </script>
-
-<style scoped>
-    #openFileWindow {
-        display: none;
-    }
-</style>
