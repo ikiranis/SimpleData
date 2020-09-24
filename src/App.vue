@@ -16,7 +16,7 @@
 
 <script>
 
-	import {ref} from 'vue'
+	import { ref } from 'vue'
 	import OpenFile from '@/components/OpenFile'
 	import SaveFile from "@/components/SaveFile";
 	import DisplayData from "@/components/DisplayData";
@@ -35,6 +35,7 @@
 			let data = ref([])
 
             const addRecord = (record) => {
+				record.id = Date.now()
 				data.value.push(record)
             }
 
