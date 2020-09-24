@@ -3,9 +3,10 @@
         <label :for="fieldId">{{ labelText }}</label>
     </div>
     <div>
-        <input :id="id" type="text" class="form-control"
+        <input :id="id" class="form-control"
                :value="modelValue"
                @input="(event) => $emit('update:modelValue', event.target.value)"
+               :type="dataType"
                :maxlength="inputLength">
     </div>
 </template>
@@ -28,7 +29,11 @@
             modelValue: {
 				required: true,
                 type: String
-            }
+            },
+			dataType: {
+				required: true,
+				type: String
+			}
 		}
 	}
 </script>

@@ -4,34 +4,39 @@
     "labelText": "ΑΜΚΑ",
     "inputLength": 20,
     "type": "text",
-    "main": true
+    "main": true,
+    "dataType": "number"
   },
   {
     "id": "AFM",
     "labelText": "ΑΦΜ",
     "inputLength": 20,
     "type": "text",
-    "main": true
+    "main": true,
+    "dataType": "number"
   },
   {
     "id": "lName",
     "labelText": "Επώνυμο",
     "inputLength": 20,
     "type": "text",
-    "main": true
+    "main": true,
+    "dataType": "text"
   },
   {
     "id": "fName",
     "labelText": "Όνομα",
     "inputLength": 20,
     "type": "text",
-    "main": true
+    "main": true,
+    "dataType": "text"
   },
   {
     "id": "fatherName",
     "labelText": "Πατρώνυμο",
     "inputLength": 20,
     "type": "text",
-    "main": true
+    "main": true,
+    "dataType": "text"
   }
 ]

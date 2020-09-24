@@ -5,6 +5,7 @@
             <text-input v-if="field.type === 'text'"
                         :fieldId="field.fieldId" :labelText="field.labelText" :inputLength="field.inputLength"
                         :modelValue="record[field.id]"
+                        :dataType="field.dataType"
                         @update:modelValue="record[field.id] = $event" />
         </div>
 
