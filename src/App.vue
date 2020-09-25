@@ -5,11 +5,23 @@
 
             <save-file class="mx-3" :data="data"/>
 
+            <a @click="displayForm = !displayForm" class="mx-2">
+                <img class="bi"
+                     src="@/../node_modules/bootstrap-icons/icons/card-text.svg"
+                     title="Εισαγωγή στοιχείων">
+            </a>
+
+            <a @click="displayData = !displayData" class="mx-2">
+                <img class="bi"
+                     src="@/../node_modules/bootstrap-icons/icons/view-list.svg"
+                     title="Εμφάνιση στοιχείων">
+            </a>
+
         </div>
 
-        <input-data class="mt-5" @submit="addRecord" />
+        <input-data v-if="displayForm" class="mt-5 mb-5" @submit="addRecord" />
 
-        <display-data class="mt-5" :data="data"/>
+        <display-data v-if="displayData" class="mt-5 mb-5" :data="data"/>
     </div>
 
 </template>
@@ -24,6 +36,7 @@
 
 	export default {
 		name: 'App',
+
 		components: {
 			SaveFile,
 			OpenFile,
@@ -33,15 +46,21 @@
 
 		setup() {
 			let data = ref([])
+            let displayForm = ref(false)
+            let displayData = ref(false)
 
             const addRecord = (record) => {
 				record.id = Date.now()
 				data.value.push(record)
+				displayForm.value = !displayForm.value
+				displayData.value = !displayData.value
             }
 
 			return {
 				data,
-                addRecord
+                addRecord,
+                displayForm,
+                displayData
 			}
 		}
 	}
