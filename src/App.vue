@@ -21,7 +21,7 @@
 
         <input-data v-if="displayForm" class="mt-5 mb-5" @submit="addRecord" />
 
-        <display-data v-if="displayData" class="mt-5 mb-5" :data="data"/>
+        <display-data v-if="displayData" class="mt-5 mb-5" />
     </div>
 
 </template>
@@ -30,9 +30,11 @@
 
 	import { ref } from 'vue'
 	import OpenFile from '@/components/OpenFile'
-	import SaveFile from "@/components/SaveFile";
-	import DisplayData from "@/components/DisplayData";
-	import InputData from "@/components/InputData";
+	import SaveFile from "@/components/SaveFile"
+	import DisplayData from "@/components/DisplayData"
+	import InputData from "@/components/InputData"
+	import {useStore} from "vuex";
+	import {computed} from "@vue/reactivity";
 
 	export default {
 		name: 'App',
@@ -45,19 +47,23 @@
 		},
 
 		setup() {
-			let data = ref([])
+			// let data = ref([])
+            const store = useStore()
             let displayForm = ref(false)
             let displayData = ref(false)
 
+            const data = computed(() => {
+                return store.state.data
+            })
+
             const addRecord = (record) => {
 				record.id = Date.now()
-				data.value.push(record)
+				store.commit('add', record)
 				displayForm.value = !displayForm.value
 				displayData.value = !displayData.value
             }
 
 			return {
-				data,
                 addRecord,
                 displayForm,
                 displayData

@@ -18,18 +18,14 @@
 </template>
 
 <script>
+    // import { ref } from 'vue'
 	import { useFields } from '@/functions/fields'
     import { computed } from 'vue'
+	import { useStore } from "vuex";
 
 	export default {
-		props: {
-			data: {
-				required: true,
-				type: Array
-			}
-		},
-
         setup() {
+			const store = useStore()
 			const { fields, emptyRecord } = useFields()
 
 			const filteredFields = computed(() => {
@@ -38,8 +34,12 @@
                 })
             })
 
+			const data = computed(() => {
+				return store.state.data
+			})
+
             return {
-				fields, emptyRecord, filteredFields
+				data, fields, emptyRecord, filteredFields
             }
         }
 	}
