@@ -52,9 +52,9 @@
             let displayForm = ref(false)
             let displayData = ref(false)
 
-            const data = computed(() => {
-                return store.state.data
-            })
+            // const data = computed(() => {
+            //     return store.state.data
+            // })
 
             const addRecord = (record) => {
 				record.id = Date.now()
