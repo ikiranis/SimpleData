@@ -19,16 +19,16 @@
 
         </div>
 
-        <input-data v-if="displayForm" class="mt-5 mb-5" @submit="addRecord" />
+        <input-data v-if="displayForm" class="mt-5 mb-5" @submit="addRecord"/>
 
-        <display-data v-if="displayData" class="mt-5 mb-5" />
+        <display-data v-if="displayData" class="mt-5 mb-5"/>
     </div>
 
 </template>
 
 <script>
 
-	import { ref } from 'vue'
+	import {ref} from 'vue'
 	import OpenFile from '@/components/OpenFile'
 	import SaveFile from "@/components/SaveFile"
 	import DisplayData from "@/components/DisplayData"
@@ -43,30 +43,31 @@
 			SaveFile,
 			OpenFile,
 			DisplayData,
-            InputData,
+			InputData,
 		},
 
 		setup() {
 			// let data = ref([])
-            const store = useStore()
-            let displayForm = ref(false)
-            let displayData = ref(false)
+			const store = useStore()
+			let displayForm = ref(false)
+			let displayData = ref(false)
 
-            // const data = computed(() => {
-            //     return store.state.data
-            // })
+			const data = computed(() => {
+				return store.state.data
+			})
 
-            const addRecord = (record) => {
+			const addRecord = (record) => {
 				record.id = Date.now()
 				store.commit('add', record)
 				displayForm.value = !displayForm.value
 				displayData.value = !displayData.value
-            }
+			}
 
 			return {
-                addRecord,
-                displayForm,
-                displayData
+				data,
+				addRecord,
+				displayForm,
+				displayData
 			}
 		}
 	}
