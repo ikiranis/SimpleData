@@ -1,6 +1,6 @@
-import { createWebHistory, createRouter } from "vue-router"
+import {createWebHistory, createRouter} from "vue-router"
 import App from "@/App"
-import DisplayData from "@/components/DisplayData"
+import List from "@/views/List"
 
 const history = createWebHistory()
 const router = createRouter({
@@ -12,7 +12,7 @@ const router = createRouter({
 		},
 		{
 			path: '/list',
-			component: DisplayData
+			component: List
 		},
 	]
 })
