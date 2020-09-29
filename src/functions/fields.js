@@ -1,18 +1,24 @@
-import { ref } from 'vue'
+// import { ref } from 'vue'
+import {useStore} from "vuex";
+import {computed} from "vue";
 
 export const useFields = () => {
-
+	const store = useStore()
 	let json = require('@/../fields.json')
 
-	const fields = ref(json)
-
-	let emptyRecord = ref({id: null})
-
-	fields.value.forEach(item => {
-		emptyRecord.value[item.id] = null
+	const fields = computed(() => {
+		return store.state.fields
 	})
 
-	return {
-		fields, emptyRecord
-	}
+	store.commit('setFields', json)
+
+	store.commit('addNullField', 'id')
+
+	fields.value.forEach(item => {
+		store.commit('addNullField', item.id)
+	})
+
+	// return {
+	// 	fields, emptyRecord
+	// }
 }

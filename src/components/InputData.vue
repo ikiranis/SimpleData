@@ -21,6 +21,7 @@
 	import {ref} from 'vue'
 	import TextInput from '@/components/input/Text'
 	import { useFields } from '@/functions/fields'
+	import {useStore} from "vuex";
 
 	export default {
 		components: {
@@ -28,7 +29,11 @@
 		},
 
 		setup(props, {emit}) {
-            const { fields, emptyRecord } = useFields()
+			const store = useStore()
+            useFields()
+
+            const fields = store.state.fields
+            const emptyRecord = store.state.emptyRecord
 
 			let record = ref(emptyRecord)
 
