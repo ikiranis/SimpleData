@@ -7,19 +7,20 @@
 </template>
 
 <script>
-	// import {ref} from 'vue'
+	import {useStore} from "vuex";
+	import {computed} from "vue";
 
 	export default {
-		props: {
-			data: {
-				required: false,
-				type: Array
-			}
-		},
-		setup(props) {
+		setup() {
+			const store = useStore()
+
+			const data = computed(() => {
+				return store.state.data
+			})
+
 			function saveFile() {
 				// console.log(props.data.toJson())
-				let file = new Blob([JSON.stringify(props.data,  null, 4)], {type: 'application/json'});
+				let file = new Blob([JSON.stringify(data.value,  null, 4)], {type: 'application/json'});
 				let link = document.createElement('a');
 				link.href = window.URL.createObjectURL(file);
 				link.download = "myData.json";

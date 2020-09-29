@@ -21,11 +21,9 @@
 
 <script>
 	import { ref } from 'vue'
-	// import { computed } from 'vue'
 
 	export default {
-
-		setup(props, { emit }) {
+		setup(_, { emit }) {
 			let open = ref(false)
 
 			const handleFile = (event) => {

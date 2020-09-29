@@ -3,7 +3,7 @@
         <div class="row mt-5">
             <open-file v-model:data="data"/>
 
-            <save-file class="mx-3" :data="data"/>
+            <save-file class="mx-3" />
 
             <a @click="displayForm = !displayForm" class="mx-2">
                 <img class="bi"

@@ -30,11 +30,11 @@
 		setup(props, {emit}) {
             const { fields, emptyRecord } = useFields()
 
-			let record = ref({emptyRecord})
+			let record = ref(emptyRecord)
 
 			const addRecord = () => {
 				emit('submit', record.value)
-				record.value = {emptyRecord}
+				record.value = emptyRecord
 			}
 
 			return {
