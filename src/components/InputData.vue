@@ -20,7 +20,6 @@
 <script>
 	import {ref} from 'vue'
 	import TextInput from '@/components/input/Text'
-	import { useFields } from '@/functions/fields'
 	import {useStore} from "vuex";
 
 	export default {
@@ -30,7 +29,6 @@
 
 		setup(props, {emit}) {
 			const store = useStore()
-            useFields()
 
             const fields = store.state.fields
             const emptyRecord = store.state.emptyRecord

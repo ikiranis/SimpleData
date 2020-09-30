@@ -1,5 +1,4 @@
 <template>
-    <span>lkfdjslkdfsjldfskjdfsk</span>
     <table class="table">
         <thead>
             <tr>
@@ -20,7 +19,7 @@
 
 <script>
     import { computed } from 'vue'
-	import { useStore } from "vuex";
+	import { useStore } from "vuex"
 
 	export default {
         setup() {

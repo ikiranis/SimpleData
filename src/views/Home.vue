@@ -34,6 +34,7 @@
 	import InputData from "@/components/InputData"
 	import {useStore} from "vuex";
 	import {computed} from "@vue/reactivity";
+	import {useFields} from "@/functions/fields"
 
 	export default {
 		name: 'App',
@@ -48,6 +49,7 @@
 			// let data = ref([])
 			const store = useStore()
 			let displayForm = ref(false)
+			useFields()
 
 			const data = computed(() => {
 				return store.state.data
