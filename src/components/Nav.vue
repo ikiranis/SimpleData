@@ -1,9 +1,9 @@
 <template>
-    <nav>
-        <router-link to="/">Simple Data</router-link>
-        <ul>
-            <li v-for="route in routes" :key="route.path">
-                <router-link :to="route.to" :class="{ active: isActive(route.to) }">{{route.text}}</router-link>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <router-link class="navbar-brand" to="/">Simple Data</router-link>
+        <ul class="navbar-nav mr-auto">
+            <li v-for="route in routes" :key="route.path" class="nav-item">
+                <router-link :to="route.to" class="nav-link" :class="{ active: isActive(route.to) }">{{route.text}}</router-link>
             </li>
         </ul>
     </nav>
