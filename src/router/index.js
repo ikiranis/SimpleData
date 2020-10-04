@@ -1,6 +1,8 @@
 import {createWebHistory, createRouter} from "vue-router"
 import Home from "@/views/Home"
 import List from "@/views/List"
+import OpenFile from "@/views/OpenFile"
+import SaveFile from "@/views/SaveFile"
 
 const history = createWebHistory()
 const router = createRouter({
@@ -14,6 +16,14 @@ const router = createRouter({
 			path: '/list',
 			component: List
 		},
+		{
+			path: '/openFile',
+			component: OpenFile
+		},
+		{
+			path: '/saveFile',
+			component: SaveFile
+		}
 	]
 })
 

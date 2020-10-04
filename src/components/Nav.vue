@@ -17,6 +17,8 @@
 		setup() {
 			const routes = [
 				{ to: "/list", text: "List" },
+				{ to: "/openFile", text: "Άνοιγμα αρχείου" },
+				{ to: "/saveFile", text: "Αποθήκευση αρχείου" },
 			]
 			const router = useRouter()
 			const activeRoute = computed(() => router.currentRoute.value.path)

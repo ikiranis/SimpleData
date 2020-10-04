@@ -1,9 +1,5 @@
 <template>
-    <img class="bi" src="@/../node_modules/bootstrap-icons/icons/cloud-arrow-up-fill.svg"
-         title="Ανέβασμα αρχείου"
-         @click="open = !open" >
-
-    <div v-if="open" class="col-12 col-lg my-auto fixed-top">
+    <div class="col-12 col-lg my-auto">
         <div class="row">
             <div class="form-group my-3 col-lg-6 col-12 mx-auto">
                 <div class="custom-file">
@@ -20,12 +16,9 @@
 </template>
 
 <script>
-	import { ref } from 'vue'
 
 	export default {
 		setup(_, { emit }) {
-			let open = ref(false)
-
 			const handleFile = (event) => {
 				const file = event.target.files[0]
 				const reader = new FileReader()
@@ -42,7 +35,6 @@
 			}
 
 			return {
-				open,
 				handleFile
 			}
 		}

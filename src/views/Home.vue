@@ -1,9 +1,6 @@
 <template>
     <div class="container">
         <div class="row mt-5">
-            <open-file v-model:data="data"/>
-
-            <save-file class="mx-3" />
 
             <a @click="displayForm = !displayForm" class="mx-2">
                 <img class="bi"
@@ -29,8 +26,6 @@
 <script>
 
 	import {ref} from 'vue'
-	import OpenFile from '@/components/OpenFile'
-	import SaveFile from "@/components/SaveFile"
 	import InputData from "@/components/InputData"
 	import {useStore} from "vuex";
 	import {computed} from "@vue/reactivity";
@@ -40,8 +35,6 @@
 		name: 'App',
 
 		components: {
-			SaveFile,
-			OpenFile,
 			InputData,
 		},
 
