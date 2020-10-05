@@ -20,7 +20,7 @@
 <script>
 	import {ref} from 'vue'
 	import TextInput from '@/components/input/Text'
-	import {useStore} from "vuex";
+	import {useStore} from "vuex"
 
 	export default {
 		components: {
