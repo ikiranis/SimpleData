@@ -21,6 +21,10 @@ const mutations = {
 
 	addNullField(state, key) {
 		state.emptyRecord[key] = null
+	},
+
+	setData(state, data) {
+		state.data = data
 	}
 }
 
