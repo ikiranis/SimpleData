@@ -10,15 +10,8 @@
 </template>
 
 <script>
-
-	import { useFields } from "@/functions/fields"
-
 	export default {
 		name: 'App',
-
-		setup() {
-			useFields()
-		}
 	}
 </script>
 

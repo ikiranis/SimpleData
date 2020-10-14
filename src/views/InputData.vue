@@ -1,5 +1,5 @@
 <template>
-    <div v-if="fields.length > 0" class="mx-auto col-lg-6 col-12 mt-5">
+    <div class="mx-auto col-lg-6 col-12 mt-5">
 
         <div  class="mb-3" v-for="field in fields" :key="field.id">
             <text-input v-if="field.type === 'text'"
@@ -20,7 +20,7 @@
 <script>
 	import { ref, computed } from 'vue'
 	import TextInput from '@/components/input/Text'
-	import {useStore} from "vuex"
+	import { useStore } from "vuex"
 
 	export default {
 		components: {
@@ -30,18 +30,18 @@
 		setup() {
 			const store = useStore()
 
-            const fields = computed(() => {
+            let fields = computed(() => {
                 return store.state.fields
             })
-            const emptyRecord = computed(() => {
-                return store.state.emptyRecord
-            })
+            const emptyRecord =  store.state.emptyRecord
 
-			let record = ref(emptyRecord)
+			let record = ref({emptyRecord})
 
             const addRecord = () => {
                 record.value.id = Date.now()
                 store.commit('add', record.value)
+
+                record.value = { emptyRecord }
             }
 
 			return {

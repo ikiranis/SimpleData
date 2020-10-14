@@ -8,7 +8,7 @@ const state = {
 
 const mutations = {
 	add(state, data) {
-		state.data.push(data)
+		state.data.push(Object.assign({}, data))
 	},
 
 	setFields(state, data) {
