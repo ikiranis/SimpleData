@@ -16,6 +16,7 @@
 	export default {
 		setup() {
 			const routes = [
+				{ to: "/inputData", text: "Εισαγωγή στοιχείων" },
 				{ to: "/list", text: "List" },
 				{ to: "/openFile", text: "Άνοιγμα αρχείου" },
 				{ to: "/saveFile", text: "Αποθήκευση αρχείου" },

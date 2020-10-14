@@ -3,8 +3,10 @@ import Home from "@/views/Home"
 import List from "@/views/List"
 import OpenFile from "@/views/OpenFile"
 import SaveFile from "@/views/SaveFile"
+import InputData from "@/views/InputData";
 
 const history = createWebHistory()
+
 const router = createRouter({
 	history,
 	routes: [
@@ -23,6 +25,10 @@ const router = createRouter({
 		{
 			path: '/saveFile',
 			component: SaveFile
+		},
+		{
+			path: '/inputData',
+			component: InputData
 		}
 	]
 })

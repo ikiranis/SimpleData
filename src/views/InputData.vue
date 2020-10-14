@@ -1,9 +1,9 @@
 <template>
-    <div class="mx-auto col-lg-6 col-12">
+    <div v-if="fields.length > 0" class="mx-auto col-lg-6 col-12 mt-5">
 
-        <div class="mb-3" v-for="field in fields" :key="field.id">
+        <div  class="mb-3" v-for="field in fields" :key="field.id">
             <text-input v-if="field.type === 'text'"
-                        :fieldId="field.fieldId" :labelText="field.labelText" :inputLength="field.inputLength"
+                        :fieldId="field.id" :labelText="field.labelText" :inputLength="field.inputLength"
                         :modelValue="record[field.id]"
                         :dataType="field.dataType"
                         @update:modelValue="record[field.id] = $event" />
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-	import {ref} from 'vue'
+	import { ref, computed } from 'vue'
 	import TextInput from '@/components/input/Text'
 	import {useStore} from "vuex"
 
@@ -27,18 +27,22 @@
 			TextInput
 		},
 
-		setup(props, {emit}) {
+		setup() {
 			const store = useStore()
 
-            const fields = store.state.fields
-            const emptyRecord = store.state.emptyRecord
+            const fields = computed(() => {
+                return store.state.fields
+            })
+            const emptyRecord = computed(() => {
+                return store.state.emptyRecord
+            })
 
 			let record = ref(emptyRecord)
 
-			const addRecord = () => {
-				emit('submit', record.value)
-				record.value = emptyRecord
-			}
+            const addRecord = () => {
+                record.value.id = Date.now()
+                store.commit('add', record.value)
+            }
 
 			return {
 				record,

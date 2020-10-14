@@ -1,23 +1,9 @@
 <template>
     <div class="container">
-        <div class="row mt-5">
 
-            <a @click="displayForm = !displayForm" class="mx-2">
-                <img class="bi"
-                     src="@/../node_modules/bootstrap-icons/icons/card-text.svg"
-                     title="Εισαγωγή στοιχείων">
-            </a>
-
-<!--            <a class="mx-2">-->
-<!--                <img class="bi"-->
-<!--                     src="@/../node_modules/bootstrap-icons/icons/view-list.svg"-->
-<!--                     title="Εμφάνιση στοιχείων">-->
-<!--            </a>-->
-
+        <div>
+            Simple Data App
         </div>
-
-        <input-data v-if="displayForm" class="mt-5 mb-5" @submit="addRecord"/>
-
 
     </div>
 
@@ -25,40 +11,13 @@
 
 <script>
 
-	import {ref} from 'vue'
-	import InputData from "@/components/InputData"
-	import {useStore} from "vuex";
-	import {computed} from "@vue/reactivity";
-	import {useFields} from "@/functions/fields"
+	import { useFields } from "@/functions/fields"
 
 	export default {
 		name: 'App',
 
-		components: {
-			InputData,
-		},
-
 		setup() {
-			// let data = ref([])
-			const store = useStore()
-			let displayForm = ref(false)
 			useFields()
-
-			const data = computed(() => {
-				return store.state.data
-			})
-
-			const addRecord = (record) => {
-				record.id = Date.now()
-				store.commit('add', record)
-				displayForm.value = !displayForm.value
-			}
-
-			return {
-				data,
-				addRecord,
-				displayForm
-			}
 		}
 	}
 </script>
