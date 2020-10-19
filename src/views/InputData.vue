@@ -35,13 +35,13 @@
             })
             const emptyRecord =  store.state.emptyRecord
 
-			let record = ref({emptyRecord})
+			let record = ref( Object.assign({}, emptyRecord) )
 
             const addRecord = () => {
                 record.value.id = Date.now()
                 store.commit('add', record.value)
 
-                record.value = { emptyRecord }
+                record.value = Object.assign({}, emptyRecord)
             }
 
 			return {

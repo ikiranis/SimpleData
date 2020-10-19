@@ -15,7 +15,7 @@ export const useFields = () => {
 	store.commit('addNullField', 'id')
 
 	fields.value.forEach(item => {
-		store.commit('addNullField', item.id)
+		store.commit('addNullField', item.fieldId)
 	})
 
 	// return {
