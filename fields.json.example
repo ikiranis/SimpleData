@@ -1,6 +1,6 @@
 [
   {
-    "id": "AMKA",
+    "fieldId": "AMKA",
     "labelText": "ΑΜΚΑ",
     "inputLength": 20,
     "type": "text",
@@ -8,7 +8,7 @@
     "dataType": "number"
   },
   {
-    "id": "AFM",
+    "fieldId": "AFM",
     "labelText": "ΑΦΜ",
     "inputLength": 20,
     "type": "text",
@@ -16,7 +16,7 @@
     "dataType": "number"
   },
   {
-    "id": "lName",
+    "fieldId": "lName",
     "labelText": "Επώνυμο",
     "inputLength": 20,
     "type": "text",
@@ -24,7 +24,7 @@
     "dataType": "text"
   },
   {
-    "id": "fName",
+    "fieldId": "fName",
     "labelText": "Όνομα",
     "inputLength": 20,
     "type": "text",
@@ -32,7 +32,7 @@
     "dataType": "text"
   },
   {
-    "id": "fatherName",
+    "fieldId": "fatherName",
     "labelText": "Πατρώνυμο",
     "inputLength": 20,
     "type": "text",

@@ -10,7 +10,7 @@
         <tbody>
             <tr v-for="item in data" :key="item.id">
                 <td v-for="field in filteredFields"
-                    :key="field.id">{{ item[field.id] }}</td>
+                    :key="field.id">{{ item[field.fieldId] }}</td>
             </tr>
         </tbody>
     </table>

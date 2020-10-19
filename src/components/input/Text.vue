@@ -3,7 +3,7 @@
         <label :for="fieldId">{{ labelText }}</label>
     </div>
     <div>
-        <input :id="id" class="form-control"
+        <input :id="fieldId" class="form-control"
                :value="modelValue"
                @input="(event) => $emit('update:modelValue', event.target.value)"
                :type="dataType"

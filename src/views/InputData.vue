@@ -1,12 +1,12 @@
 <template>
     <div class="mx-auto col-lg-6 col-12 mt-5">
 
-        <div  class="mb-3" v-for="field in fields" :key="field.id">
+        <div  class="mb-3" v-for="field in fields" :key="field.fieldId">
             <text-input v-if="field.type === 'text'"
-                        :fieldId="field.id" :labelText="field.labelText" :inputLength="field.inputLength"
-                        :modelValue="record[field.id]"
+                        :fieldId="field.fieldId" :labelText="field.labelText" :inputLength="field.inputLength"
+                        :modelValue="record[field.fieldId] ?? ''"
                         :dataType="field.dataType"
-                        @update:modelValue="record[field.id] = $event" />
+                        @update:modelValue="record[field.fieldId] = $event" />
         </div>
 
         <div class="row">
