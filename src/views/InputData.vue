@@ -9,7 +9,7 @@
                         @update:modelValue="record[field.fieldId] = $event" />
         </div>
 
-        <div class="row">
+        <div class="row mb-5">
             <button @click="addRecord" class="btn btn-warning mt-3 col-lg-6 col-12 mx-auto">Προσθήκη</button>
         </div>
 
