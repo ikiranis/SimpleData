@@ -6,7 +6,7 @@
 
 <script>
 	import Nav from "@/components/Nav"
-    import {useFields} from "@/functions/fields";
+    import { useFields } from "@/functions/fields";
 
 	export default {
 		name: 'App',
