@@ -9,6 +9,7 @@
         </thead>
         <tbody>
             <tr v-for="item in data" :key="item.id">
+                <td><router-link :to="{ name: 'record', params: { id: item.id } }">Record</router-link></td>
                 <td v-for="field in filteredFields"
                     :key="field.id">{{ item[field.fieldId] }}</td>
             </tr>

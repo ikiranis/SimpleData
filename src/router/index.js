@@ -4,6 +4,7 @@ import List from "@/views/List"
 import OpenFile from "@/views/OpenFile"
 import SaveFile from "@/views/SaveFile"
 import InputData from "@/views/InputData";
+import Record from "@/views/Record";
 
 const history = createWebHistory()
 
@@ -29,6 +30,12 @@ const router = createRouter({
 		{
 			path: '/inputData',
 			component: InputData
+		},
+		{
+			path: '/record/:id',
+			name: 'record',
+			component: Record,
+			props: true
 		}
 	]
 })
