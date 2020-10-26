@@ -5,7 +5,10 @@
     <div>
         <input :id="fieldId" class="form-control"
                :value="modelValue"
-               @input="(event) => $emit('update:modelValue', event.target.value)"
+               @input="(event) => {
+                   $emit('update:modelValue', event.target.value)
+                   $emit('update:error', event.target.validity.valid)
+               }"
                :type="dataType"
                :maxlength="inputLength">
     </div>
